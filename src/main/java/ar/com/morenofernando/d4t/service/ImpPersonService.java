@@ -1,36 +1,46 @@
 package ar.com.morenofernando.d4t.service;
 
 import ar.com.morenofernando.d4t.entity.Person;
-import ar.com.morenofernando.d4t.interfaces.IPersonService;
 import ar.com.morenofernando.d4t.repository.IPersonRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.transaction.Transactional;
 import java.util.List;
+import java.util.Optional;
 
 @Service
-public class ImpPersonService implements IPersonService {
+@Transactional
+public class ImpPersonService {
 
     @Autowired
     IPersonRepository iPersonRepository;
 
-    @Override
-    public List<Person> getPerson() {
+    public List<Person> list() {
         return iPersonRepository.findAll();
     }
 
-    @Override
-    public void savePerson(Person person) {
+    public Optional<Person> getOne(int id) {
+        return iPersonRepository.findById(id);
+    }
+
+    public Optional<Person> getByName(String name) {
+        return iPersonRepository.findByName(name);
+    }
+
+    public void save(Person person) {
         iPersonRepository.save(person);
     }
 
-    @Override
-    public void deletePerson(Long id) {
+    public void delete(int id) {
         iPersonRepository.deleteById(id);
     }
 
-    @Override
-    public Person findPerson(Long id) {
-        return iPersonRepository.findById(id).orElse(null);
+    public boolean existsById(int id) {
+        return iPersonRepository.existsById(id);
+    }
+
+    public boolean existsByName(String name) {
+        return  iPersonRepository.existsByName(name);
     }
 }

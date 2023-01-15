@@ -5,7 +5,10 @@ import org.springframework.stereotype.Repository;
 
 import ar.com.morenofernando.d4t.entity.Person;
 
-@Repository
-public interface IPersonRepository extends JpaRepository<Person,Long> {
+import java.util.Optional;
 
+@Repository
+public interface IPersonRepository extends JpaRepository<Person,Integer> {
+    public Optional<Person> findByName(String name);
+    public boolean existsByName(String name);
 }

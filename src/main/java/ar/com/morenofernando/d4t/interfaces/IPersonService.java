@@ -13,8 +13,8 @@ public interface IPersonService {
 	public void savePerson(Person person);
 	
 	//delete person
-	public void deletePerson(Long id);
+	public void deletePerson(int id);
 	
 	//search person
-	public Person findPerson(Long id);
+	public Person findPerson(int id);
 }

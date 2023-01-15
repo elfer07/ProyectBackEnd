@@ -47,12 +47,12 @@ public class ExperienceController {
 
     @PostMapping("/create")
     public ResponseEntity<?> create(@RequestBody DtoExperience dtoexp){
-        if(StringUtils.isBlank(dtoexp.getNombreE()))
+        if(StringUtils.isBlank(dtoexp.getName()))
             return new ResponseEntity(new Messages("El nombre es obligatorio"), HttpStatus.BAD_REQUEST);
-        if(sExperiencia.existsByNombreE(dtoexp.getNombreE()))
+        if(sExperiencia.existsByNombreE(dtoexp.getName()))
             return new ResponseEntity(new Messages("Esa experiencia existe"), HttpStatus.BAD_REQUEST);
 
-        Experience experiencia = new Experience(dtoexp.getNombreE(), dtoexp.getDescripcionE());
+        Experience experiencia = new Experience(dtoexp.getName(), dtoexp.getDescripcionE());
         sExperiencia.save(experiencia);
 
         return new ResponseEntity(new Messages("Experiencia agregada"), HttpStatus.OK);
@@ -64,14 +64,14 @@ public class ExperienceController {
         if(!sExperiencia.existsById(id))
             return new ResponseEntity(new Messages("El ID no existe"), HttpStatus.BAD_REQUEST);
         //Compara nombre de experiencias
-        if(sExperiencia.existsByNombreE(dtoexp.getNombreE()) && sExperiencia.getByNombreE(dtoexp.getNombreE()).get().getId() != id)
+        if(sExperiencia.existsByNombreE(dtoexp.getName()) && sExperiencia.getByName(dtoexp.getName()).get().getId() != id)
             return new ResponseEntity(new Messages("Esa experiencia ya existe"), HttpStatus.BAD_REQUEST);
         //No puede estar vacio
-        if(StringUtils.isBlank(dtoexp.getNombreE()))
+        if(StringUtils.isBlank(dtoexp.getName()))
             return new ResponseEntity(new Messages("El nombre es obligatorio"), HttpStatus.BAD_REQUEST);
 
         Experience experiencia = sExperiencia.getOne(id).get();
-        experiencia.setNombreE(dtoexp.getNombreE());
+        experiencia.setName(dtoexp.getName());
         experiencia.setDescripcionE((dtoexp.getDescripcionE()));
 
         sExperiencia.save(experiencia);
