@@ -9,6 +9,6 @@ import java.util.Optional;
 @Repository
 public interface ExperienceRepo extends JpaRepository<Experience, Integer> {
 
-    public Optional<Experience> findByName(String name);
-    public boolean existsByName(String name);
+    public Optional<Experience> findByNombreE(String nombreE);
+    public boolean existsByNombreE(String nombreE);
 }

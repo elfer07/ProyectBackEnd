@@ -29,12 +29,12 @@ public class Experience {
         this.id = id;
     }
 
-    public String getName() {
+    public String getNombreE() {
         return nombreE;
     }
 
-    public void setName(String name) {
-        this.nombreE = name;
+    public void setNombreE(String nombreE) {
+        this.nombreE = nombreE;
     }
 
     public String getDescripcionE() {
