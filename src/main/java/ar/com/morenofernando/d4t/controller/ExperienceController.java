@@ -14,7 +14,8 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/explab")
-@CrossOrigin(origins = "http://localhost:4200")
+//@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = "https://portfolioflm.web.app/")
 public class ExperienceController {
 
     @Autowired
