@@ -10,14 +10,14 @@ public class Experience {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-    private String name;
+    private String nombreE;
     private String descripcionE;
 
     public Experience() {
     }
 
-    public Experience(String name, String descripcionE) {
-        this.name = name;
+    public Experience(String nombreE, String descripcionE) {
+        this.nombreE = nombreE;
         this.descripcionE = descripcionE;
     }
 
@@ -30,11 +30,11 @@ public class Experience {
     }
 
     public String getName() {
-        return name;
+        return nombreE;
     }
 
     public void setName(String name) {
-        this.name = name;
+        this.nombreE = name;
     }
 
     public String getDescripcionE() {

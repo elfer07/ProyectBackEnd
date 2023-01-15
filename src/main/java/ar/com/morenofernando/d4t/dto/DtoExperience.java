@@ -5,7 +5,7 @@ import javax.validation.constraints.NotBlank;
 public class DtoExperience {
 
     @NotBlank
-    private String name;
+    private String nombreE;
 
     @NotBlank
     private String descripcionE;
@@ -15,16 +15,16 @@ public class DtoExperience {
     }
 
     public DtoExperience(String nombreE, String descripcionE) {
-        this.name = nombreE;
+        this.nombreE = nombreE;
         this.descripcionE = descripcionE;
     }
 
     public String getName() {
-        return name;
+        return nombreE;
     }
 
     public void setName(String name) {
-        this.name = name;
+        this.nombreE = name;
     }
 
     public String getDescripcionE() {
