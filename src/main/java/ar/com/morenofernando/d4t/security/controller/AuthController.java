@@ -9,7 +9,6 @@ import ar.com.morenofernando.d4t.security.model.Rol;
 import ar.com.morenofernando.d4t.security.model.User;
 import ar.com.morenofernando.d4t.security.service.RolService;
 import ar.com.morenofernando.d4t.security.service.UserService;
-import org.aspectj.bridge.Message;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
