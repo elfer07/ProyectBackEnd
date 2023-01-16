@@ -21,16 +21,16 @@ public class Projects {
     @NotNull
     private String description;
 
-    private String img;
+    private String image;
 
     public Projects() {
 
     }
 
-    public Projects(String title, String description, String img) {
+    public Projects(String title, String description, String image) {
         this.title = title;
         this.description = description;
-        this.img = img;
+        this.image = image;
     }
 
     public int getId() {
@@ -57,11 +57,11 @@ public class Projects {
         this.description = description;
     }
 
-    public String getImg() {
-        return img;
+    public String getImage() {
+        return image;
     }
 
-    public void setImg(String img) {
-        this.img = img;
+    public void setImage(String image) {
+        this.image = image;
     }
 }

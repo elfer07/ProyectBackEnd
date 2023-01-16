@@ -8,15 +8,15 @@ public class DtoProject {
     @NotBlank
     private String description;
     @NotBlank
-    private String img;
+    private String image;
 
     public DtoProject() {
     }
 
-    public DtoProject(String title, String description, String img) {
+    public DtoProject(String title, String description, String image) {
         this.title = title;
         this.description = description;
-        this.img = img;
+        this.image = image;
     }
 
     public String getTitle() {
@@ -35,11 +35,11 @@ public class DtoProject {
         this.description = description;
     }
 
-    public String getImg() {
-        return img;
+    public String getImage() {
+        return image;
     }
 
-    public void setImg(String img) {
-        this.img = img;
+    public void setImage(String image) {
+        this.image = image;
     }
 }

@@ -42,7 +42,7 @@ public class ProjectController {
             return new ResponseEntity(new Messages("No existe el ID"), HttpStatus.NOT_FOUND);
         }
         projectsService.delete(id);
-        return new ResponseEntity(new Messages("Persona eliminada"), HttpStatus.OK);
+        return new ResponseEntity(new Messages("Proyecto eliminada"), HttpStatus.OK);
     }
 
     @PostMapping("/create")
@@ -55,7 +55,7 @@ public class ProjectController {
         }
 
         Projects projects = new Projects(
-                dtoProject.getTitle(), dtoProject.getDescription(), dtoProject.getImg()
+                dtoProject.getTitle(), dtoProject.getDescription(), dtoProject.getImage()
         );
         projectsService.save(projects);
         return new ResponseEntity(new Messages("Proyecto creado"), HttpStatus.OK);
@@ -78,7 +78,7 @@ public class ProjectController {
 
         projects.setTitle(dtoProject.getTitle());
         projects.setDescription(dtoProject.getDescription());
-        projects.setImg(dtoProject.getImg());
+        projects.setImage(dtoProject.getImage());
 
         projectsService.save(projects);
 
