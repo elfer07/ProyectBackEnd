@@ -14,7 +14,6 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/projects")
-//@CrossOrigin(origins = "http://localhost:4200")
 @CrossOrigin(origins = "https://portfolioflm.web.app/")
 public class ProjectController {
 
@@ -55,7 +54,7 @@ public class ProjectController {
         }
 
         Projects projects = new Projects(
-                dtoProject.getTitle(), dtoProject.getDescription(), dtoProject.getImage()
+                dtoProject.getTitle(), dtoProject.getDescription(), dtoProject.getLink(), dtoProject.getImage()
         );
         projectsService.save(projects);
         return new ResponseEntity(new Messages("Proyecto creado"), HttpStatus.OK);
@@ -78,6 +77,7 @@ public class ProjectController {
 
         projects.setTitle(dtoProject.getTitle());
         projects.setDescription(dtoProject.getDescription());
+        projects.setLink(dtoProject.getLink());
         projects.setImage(dtoProject.getImage());
 
         projectsService.save(projects);
