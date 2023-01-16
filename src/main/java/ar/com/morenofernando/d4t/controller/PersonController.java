@@ -43,7 +43,7 @@ public class PersonController {
         }
         iPersonService.delete(id);
         return new ResponseEntity(new Messages("Persona eliminada"), HttpStatus.OK);
-    }
+    }*/
 
     @PostMapping("/create")
     public ResponseEntity<?> create(@RequestBody DtoPerson dtoPerson){
@@ -55,12 +55,12 @@ public class PersonController {
         }
 
         Person person = new Person(
-                dtoPerson.getName(), dtoPerson.getDescription()
+                dtoPerson.getName(), dtoPerson.getSurname(), dtoPerson.getDescription(), dtoPerson.getImg()
         );
         iPersonService.save(person);
         return new ResponseEntity(new Messages("Persona creada"), HttpStatus.OK);
 
-    }*/
+    }
 
     @PutMapping("/update/{id}")
     public ResponseEntity<?> update(@PathVariable("id") int id, @RequestBody DtoPerson dtoPerson){
