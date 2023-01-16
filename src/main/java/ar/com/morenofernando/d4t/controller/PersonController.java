@@ -21,7 +21,7 @@ public class PersonController {
     @Autowired
     ImpPersonService iPersonService;
 
-    @GetMapping("/list")
+    @GetMapping("/lista")
     public ResponseEntity<List<Person>> list(){
         List<Person> list = iPersonService.list();
         return new ResponseEntity(list, HttpStatus.OK);
