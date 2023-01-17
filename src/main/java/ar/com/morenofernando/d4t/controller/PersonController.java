@@ -31,8 +31,8 @@ public class PersonController {
             return new ResponseEntity(new Messages("No existe el ID"), HttpStatus.BAD_REQUEST);
         }
 
-        Person educacion = iPersonService.getOne(id).get();
-        return new ResponseEntity(educacion, HttpStatus.OK);
+        Person person = iPersonService.getOne(id).get();
+        return new ResponseEntity(person, HttpStatus.OK);
     }
 
     /*@DeleteMapping("/delete/{id}")
